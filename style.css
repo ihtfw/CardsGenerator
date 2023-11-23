@@ -1,0 +1,61 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#load-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3mm;
+    padding: 10mm;
+    /* Adjust as needed */
+    max-height: 277mm;
+    /* A4 height minus some margin */
+    box-sizing: border-box;
+}
+
+.card {
+    border: 1px solid gray;
+    padding: 5mm;
+    border-radius: 2mm;
+    width: 60mm;
+    /* Card width */
+    height: 30mm;
+    /* Card height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+@media print {
+    #card-container {
+        page-break-after: auto;
+    }
+
+    .card {
+        page-break-inside: avoid;
+        /* Avoid breaking inside a card */
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+        margin-top: 10mm;
+    }
+}
